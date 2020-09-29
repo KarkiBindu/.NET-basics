@@ -35,6 +35,9 @@
     - It is a visual studio commandline tool
     - It is used to peek at the assembly manifest and IL
     - It can also be used to export manifest and IL into text file
+    - To disammble an assembly open visual studio command prompt and enter <i>ILDASM</i> fullassemblypath
+    - Then following window will be shown :
+    ![Disassembled Assembly](https://github.com/KarkiBindu/.NET-basics/blob/master/ILDASM.png)
     
 6. <b> ILASM (IL Assembler) </b> :
     - It is a visual studio commandline tool
@@ -42,5 +45,5 @@
     
 7. <b> Global Assembly Cache (GAC) </b> :
     
-<b>Reference</b> :
+##<b>Reference</b> :
 1. "Assemblies In .NET". Docs.Microsoft.Com, 08/15/2019, https://docs.microsoft.com/en-us/dotnet/standard/assembly/.
