@@ -40,10 +40,13 @@
     - To disammble an assembly open visual studio command prompt and enter <i>ILDASM</i> fullassemblypath
     - Then following window will be shown :
     ![Disassembled Assembly](https://github.com/KarkiBindu/.NET-basics/blob/master/ILDASM.png)
+    - To create text file Go to File-> Dump and click ok and provide the filename, these files are saved with <i>.il</i> extension
     
 6. <b> ILASM (IL Assembler) </b> :
     - It is a visual studio commandline tool
     - It is used to reconstruct an assembly from a text file that contains manifest and IL
+    - To create assembly from <i> .il </i> file; open visual studio command prompt and enter <i>ILASM</i> full.ilFilepath
+   
     
 7. <b> Global Assembly Cache (GAC) </b> :
     
