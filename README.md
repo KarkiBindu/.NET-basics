@@ -11,6 +11,7 @@
     - <b>Version Number </b> signifies the version of an assembly; by default version number is 1.0.0.0
     - Version Number consists of four parts : </br> 1. Major version </br> 2. Minor version </br> 3. Build number </br> 4. Revision number
     - Culture information determines whether the assembly is language(English/ Spanish) neutral or not and when culture is defined the assembly will be satellite assembly
+    - These information can be changed/updated from <i>AssemblyInfo.cs file</i>
     
 2. <b> Manifest </b> : 
     - It contains the assembly metadata that specifies the assembly's version number, requirements and security identity
@@ -47,8 +48,20 @@
     - It is used to reconstruct an assembly from a text file that contains manifest and IL
     - To create assembly from <i> .il </i> file; open visual studio command prompt and enter `ILASM "full.ilFilepath"`
    
+7. <b> Strong Naming an Assembly </b> :
+    - Assemblies signed with private and public key pair are  strong named
+    - They are supposed to be unique and solves DLL hell
+    - To install an assembly into GAC they must be strongly named
+    - To create key pair open visal studio command prompt and enter `sn.exe - k "Generationpath\Filename.snk"`, -k asserts generation
+    - To make an assembly Strongly Named in <i>AssemblyIno.cs</i> use <i>AssemblyKeyFile</i> attribute `[assembly : AssemblyKeyFile("Generationpath\Filename.snk")]` 
     
-7. <b> Global Assembly Cache (GAC) </b> :
+    
+8. <b> Global Assembly Cache (GAC) </b> :
+    - It is a location where all .net framework class library are installed
+    - It is found in Assembly folder inside OS directory in windows OS it is found in C:\Windows\Assembly
+    - Assemblies installed in GAC can be shared by multiple applications without referencing (copying locally) it
+    - Only add assembly to GAC if it is shared by other applications
+    - These assemblies will not be copied when trying to copy the project to another machine
     
 <b>Reference</b> :
 1. "Assemblies In .NET". Docs.Microsoft.Com, 08/15/2019, https://docs.microsoft.com/en-us/dotnet/standard/assembly/.
