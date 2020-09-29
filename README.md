@@ -38,7 +38,7 @@
     - It is a visual studio commandline tool
     - It is used to peek at the assembly manifest and IL
     - It can also be used to export manifest and IL into text file
-    - To disammble an assembly open visual studio command prompt and enter `ILDASM "fullassemblypath"`
+    - To disammble an assembly open visual studio command prompt and enter `ILDASM fullassemblypath`
     - Then following window will be shown :
     ![Disassembled Assembly](https://github.com/KarkiBindu/.NET-basics/blob/master/ILDASM.png)
     - To create text file Go to File-> Dump and click ok and provide the filename, these files are saved with <i>.il</i> extension
@@ -46,15 +46,14 @@
 6. <b> ILASM (IL Assembler) </b> :
     - It is a visual studio commandline tool
     - It is used to reconstruct an assembly from a text file that contains manifest and IL
-    - To create assembly from <i> .il </i> file; open visual studio command prompt and enter `ILASM "full.ilFilepath"`
+    - To create assembly from <i> .il </i> file; open visual studio command prompt and enter `ILASM full.ilFilepath`
    
 7. <b> Strong Naming an Assembly </b> :
     - Assemblies signed with private and public key pair are  strong named
     - They are supposed to be unique and solves DLL hell
     - To install an assembly into GAC they must be strongly named
-    - To create key pair open visal studio command prompt and enter `sn.exe - k "Generationpath\Filename.snk"`, -k asserts generation
+    - To create key pair open visal studio command prompt and enter `sn.exe -k Generationpath\Filename.snk`, -k asserts generation
     - To make an assembly Strongly Named in <i>AssemblyIno.cs</i> use <i>AssemblyKeyFile</i> attribute `[assembly : AssemblyKeyFile("Generationpath\Filename.snk")]` 
-    
     
 8. <b> Global Assembly Cache (GAC) </b> :
     - It is a location where all .net framework class library are installed
@@ -62,6 +61,13 @@
     - Assemblies installed in GAC can be shared by multiple applications without referencing (copying locally) it
     - Only add assembly to GAC if it is shared by other applications
     - These assemblies will not be copied when trying to copy the project to another machine
+    - There are two GAC location : </br> 1. C:\Windows\assembly for .NET2.0-3.5 </br> 2. C:\Windows\Microsoft.NET\assembly for .NET 4 and above
+    - Assembly can be installed in GAC in two ways: </br> 1. Drag and drop </br> 2. Use GacUtil.exe (GAC utility tool)
+    - Assemblies with same name and same public keytoken can be together and perform together with different version number
+    - To install using GAC open VS command prompt and navigate to assembly location and enter `gacutil -i fullassemblypathname`
+    - To uninstall using GAC eneter `gacutil -u AssemblyName`, no extension required
+    - To uninstall specific assembly using GAC `gacutil -u AssemblyName,version = versionnmber,publickeytoken = value`
+    
     
 <b>Reference</b> :
 1. "Assemblies In .NET". Docs.Microsoft.Com, 08/15/2019, https://docs.microsoft.com/en-us/dotnet/standard/assembly/.
