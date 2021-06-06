@@ -29,7 +29,7 @@
     - It is a kind of compiler and supports multiple programming languages
     
 4. <b> Working principle </b> :
-    1. A compiler converts all the code written in specific language into an assembly
+    1. A language native compiler (csc.exe for MS C#) converts all the code written in specific language into an assembly
     2. Assembly has the CIL (Common Intermediate Language) which is passed to JIT (Just In Time) compiler of CLR
     3. JIT converts CIL to machine language code ate run time, JIT only converts the code required for execution
     4. Finally the CPU (Central Processing Unit) executes the code directly
