@@ -67,6 +67,18 @@
     - To install using GAC open VS command prompt and navigate to assembly location and enter `gacutil -i fullassemblypathname`
     - To uninstall using GAC eneter `gacutil -u AssemblyName`, no extension required
     - To uninstall specific assembly using GAC `gacutil -u AssemblyName,version = versionnmber,publickeytoken = value`
+
+9. <b> DLL Hell </b> :
+    - If an application installs new vwesion of shared component that is not backward compatible with the version already available on the machine then it will break all the applications that relies in it which is known as dll hell.
+    - Example: We have one application A1 sharing assembly of another application A2. If methods and its signature is changed in A2 and provided to the A1 application, A1 will not be able to find that method as the signatuure is A1 is of the unchanged method which will crash the application.
+    - To reolve this problem an assembly should be strongly named. So that the versions of the assemblies will be created preventing the applicatio to crash. If the method is not found in newer version then it will check the older version. 
+
+9. <b> How .NET finds shared assembly </b> :
+    - The manifest contains the information about the dependent assemblies
+    - If the dependent assembly is strongly named then the CLR checks in GAC
+    - If it is not found in GAC then it checks for the location in .config file if it exists
+    - Else it searches in the directory containing the executable files or assemblies (debug/release)
+    - If the assembly is not found then the application terminates with error
     
     
 <b>Reference</b> :
