@@ -81,27 +81,27 @@
     - If the assembly is not found then the application terminates with error
 
 9. <b> Components of CLR </b> :    
-    - Class Loader: 
-            - Loads classes reqired for execution at the time from compiled source code to memory
-            - Cannot allocate or deallocate memory
-    - Memory Manager:
+    - Class Loader: </br>
+            - Loads classes reqired for execution at the time from compiled source code to memory</br>
+            - Cannot allocate or deallocate memory </br>
+    - Memory Manager:</br>
             - Allocates memory for all objects in application's heap
-    - Garbage Collector (GC):
-            - Cleans unused managed objects and reclaims memory
-            - Runs as a background thread and checks for unused memory after uncertain period of time
-            - It cannot cleans memory outside of .NET boundary like excel files etc
-            - It contains different generations like Gen 0, gen 1, gen 2
-            - Generations are memory allocated buckets, when the program is first run then the objects are allocated in gen 0, then garbage collector checks after some time for unused objects and removes them if the objects are required then it moves those to gen 1 and again after certain time garbage collector checks for nused objects and removes them and transfers the reqired objects to gen 2.
-            - Generations helps for faster performance of GC
-            - Gen 1 and gen 2 is least frequented by GC, means the objects of gen 1 and gen 2 stays in memory forlong time
-            - These processes can be studied by installing CLR provider
-     - JIT Compiler:
+    - Garbage Collector (GC):</br>
+            - Cleans unused managed objects and reclaims memory </br>
+            - Runs as a background thread and checks for unused memory after uncertain period of time </br>
+            - It cannot cleans memory outside of .NET boundary like excel files etc </br>
+            - It contains different generations like Gen 0, gen 1, gen 2 </br>
+            - Generations are memory allocated buckets, when the program is first run then the objects are allocated in gen 0, then garbage collector checks after some time for unused objects and removes them if the objects are required then it moves those to gen 1 and again after certain time garbage collector checks for nused objects and removes them and transfers the reqired objects to gen 2. </br>
+            - Generations helps for faster performance of GC </br>
+            - Gen 1 and gen 2 is least frequented by GC, means the objects of gen 1 and gen 2 stays in memory forlong time </br>
+            - These processes can be studied by installing CLR provider </br>
+     - JIT Compiler:</br>
             - Compiles the Intermediate language into machine code
-     - Exception Manager:
+     - Exception Manager:</br>
             - Creates exception log and raises notification on runtime error 
-     - Thread Manager:
+     - Thread Manager:</br>
             - Helps to create and execute threads for multi-processing
-     - Security Manager:
+     - Security Manager:</br>
             - Verifies every steps before execution
 <b>Reference</b> :
 1. "Assemblies In .NET". Docs.Microsoft.Com, 08/15/2019, https://docs.microsoft.com/en-us/dotnet/standard/assembly/.
