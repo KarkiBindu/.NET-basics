@@ -105,3 +105,6 @@
             - Verifies every steps before execution
 <b>Reference</b> :
 1. "Assemblies In .NET". Docs.Microsoft.Com, 08/15/2019, https://docs.microsoft.com/en-us/dotnet/standard/assembly/.
+
+<b>Resources</b> :
+1. https://www.youtube.com/watch?v=ruf4U9_Rbss&list=PL8598C97BA1D871C1
