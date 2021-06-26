@@ -103,7 +103,8 @@
             - Helps to create and execute threads for multi-processing
      - Security Manager:</br>
             - Verifies every steps before execution
-<b>Reference</b> :
+            
+<b>References</b> :
 1. "Assemblies In .NET". Docs.Microsoft.Com, 08/15/2019, https://docs.microsoft.com/en-us/dotnet/standard/assembly/.
 
 <b>Resources</b> :
