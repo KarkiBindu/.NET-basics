@@ -73,14 +73,36 @@
     - Example: We have one application A1 sharing assembly of another application A2. If methods and its signature is changed in A2 and provided to the A1 application, A1 will not be able to find that method as the signatuure is A1 is of the unchanged method which will crash the application.
     - To reolve this problem an assembly should be strongly named. So that the versions of the assemblies will be created preventing the applicatio to crash. If the method is not found in newer version then it will check the older version. 
 
-9. <b> How .NET finds shared assembly </b> :
+10. <b> How .NET finds shared assembly </b> :
     - The manifest contains the information about the dependent assemblies
     - If the dependent assembly is strongly named then the CLR checks in GAC
     - If it is not found in GAC then it checks for the location in .config file if it exists
     - Else it searches in the directory containing the executable files or assemblies (debug/release)
     - If the assembly is not found then the application terminates with error
 
-9. <b> Components of CLR </b> :    
+11. <b> Components of .NET Framework </b> :
+     1) CLR: It provides the runtime environment for managed code and allocates and deallocates the memory within scope
+     2) Class Library: These are also called base class library which contains the methods and functions independent to the language. Most of these are accesible under System. or Microsoft. namespace.
+     3) Common type Specification (CTS): 
+        - Every programming language has its own data type system, so CTS is responsible for understanding all the data type systems of .NET programming languages and converting them into CLR understandable format which will be a common format.
+        - There are 2 Types of CTS that every .NET programming language have :
+            1.	Value Types: Value Types will store the value directly into the memory location. These types work with stack mechanism only. CLR allows memory for these at Compile Time.
+            2.	Reference Types: Reference Types will contain a memory address of value because the reference types won’t store the variable value directly in memory. These types work with a Heap mechanism. CLR allocates memory for these at Runtime.                  
+     4) Common Language Specification (CLS): 
+        - It is a part of specification of .Net framework and sub-set of CTS
+        - It conatins fundamental sets of language feature supported by CLR
+        - It includes feature common to many OOP language
+        - It defines the rules for the compiler to support interoperability and interaction between languages supported by CLS
+        - Language Interoperability can be achieved in two ways :
+            1.	Managed Code: The MSIL code which is managed by the CLR is known as the Managed Code. For managed code CLR provides three .NET facilities:
+                              o	CAS(Code Access Security)
+                              o	Exception Handling
+                              o	Automatic Memory Management
+            2.	Unmanaged Code: Before .NET development the programming language like .COM Components & Win32 API do not generate the MSIL code. So these are not managed by CLR rather they are managed by the Operating System.
+
+     
+     
+12. <b> Components of CLR </b> :    
     - Class Loader: </br>
             - Loads classes reqired for execution at the time from compiled source code to memory</br>
             - Cannot allocate or deallocate memory </br>
